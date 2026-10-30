@@ -1,0 +1,9 @@
+{
+  "name": "foundry-sso",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mobile-friendly Foundry VTT join page with Authentik single sign-on (HTTP Basic passthrough)",
+  "type": "module",
+  "main": "server.js",
+  "engines": { "node": ">=22" }
+}
