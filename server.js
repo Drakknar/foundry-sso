@@ -20,7 +20,7 @@ import { audit } from "./audit.js";
 import { mcpServer } from "./mcp.js";
 import { tools } from "./tools.js";
 
-const VERSION = "0.4.3";
+const VERSION = "0.4.4";
 // Foundry's own session lifetime (sessions.mjs: 864e5 ms).
 const SESSION_MAX_AGE = 86400;
 // Foundry routes that need the server administrator (views/*.mjs); they reach Foundry only through this service.
@@ -224,13 +224,16 @@ function page(title, body, { bg = "", refresh = 0, refreshTo = "" } = {}) {
 ${refresh ? `<meta http-equiv="refresh" content="${refresh}${refreshTo ? `;url=${esc(refreshTo)}` : ""}">` : ""}
 <meta name="color-scheme" content="dark"><title>${esc(title)}</title>
 <style>
+/* Foundry's title font, loaded from Foundry itself on the same origin (licensed to Foundry: never copy the files here) */
+@font-face{font-family:"Modesto Condensed";font-weight:400;font-display:swap;src:url("/fonts/modesto-condensed/modesto-condensed.woff2") format("woff2")}
+@font-face{font-family:"Modesto Condensed";font-weight:700;font-display:swap;src:url("/fonts/modesto-condensed/modesto-condensed-bold.woff2") format("woff2")}
 :root{--bg:#16131a;--card:#221d27ee;--ink:#ece6f2;--muted:#a79fb0;--acc:#ff6400;--line:#3a3242;--err:#ff8a7a}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;min-height:100dvh;background:var(--bg) ${bg ? `url("${esc(bg)}") center/cover fixed` : ""};color:var(--ink);
   font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;
   padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
 main{width:100%;max-width:440px;display:flex;flex-direction:column;gap:16px}
-h1{font-size:1.6rem;margin:8px 0;text-align:center;text-shadow:0 2px 8px #000}
+h1{font:400 2.4rem/1.1 "Modesto Condensed",serif;letter-spacing:.02em;margin:8px 0;text-align:center;text-shadow:0 2px 8px #000}
 h2{font-size:1.2rem;margin:0 0 12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;backdrop-filter:blur(6px)}
 .who{margin:0;text-align:center;color:var(--ink);font-size:.9rem;text-shadow:0 1px 4px #000}
