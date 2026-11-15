@@ -1,5 +1,7 @@
 # foundry-sso
 
+<img src="assets/icon.svg" alt="" width="96" align="right">
+
 Handles every Foundry VTT login step for every campaign and for the admin area, with single sign-on through Authentik. Its join page is mobile-friendly.
 
 ## How it works
